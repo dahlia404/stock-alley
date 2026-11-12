@@ -1,0 +1,10 @@
+# Netlify: publishes the React frontend and proxies /api/* to your backend.
+# Set BACKEND_URL in Netlify -> Site configuration -> Environment variables
+# (e.g. https://alleystock-api.onrender.com, without trailing slash).
+[build]
+  base = "frontend"
+  command = "yarn build && node scripts/netlify-redirects.mjs"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"

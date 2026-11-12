@@ -1,0 +1,231 @@
+{
+  "project_name": "AlleyStock - Artist Alley Stock & Sales Manager",
+  "app_type": "dashboard",
+  "primary_language": "es",
+  "locale_conventions": {
+    "currency_default": "EUR",
+    "currency_symbol": "€",
+    "currency_format": "0,00 €",
+    "date_format": "DD/MM/YYYY",
+    "time_format": "24h (HH:mm)"
+  },
+  "typography": {
+    "font_family_heading": "Outfit, sans-serif",
+    "font_family_body": "Plus Jakarta Sans, sans-serif",
+    "font_family_mono": "JetBrains Mono, monospace",
+    "font_imports": [
+      "@import \"@fontsource-variable/outfit\";",
+      "@import \"@fontsource-variable/plus-jakarta-sans\";",
+      "@import \"@fontsource-variable/jetbrains-mono\";"
+    ],
+    "scale_px": {
+      "display": 52,
+      "h1": 36,
+      "h2": 28,
+      "h3": 20,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "headings": "font-heading font-bold tracking-tight text-slate-900 dark:text-slate-100",
+      "body": "font-sans text-base leading-relaxed text-slate-700 dark:text-slate-300",
+      "labels": "font-sans text-xs uppercase font-semibold tracking-wider text-slate-500 dark:text-slate-400",
+      "numbers_currency": "font-mono font-semibold"
+    }
+  },
+  "colors": {
+    "theme": "vibrant_creative_warm_slate",
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#F8FAFC",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "link": "#4F46E5",
+          "error": "#DC2626",
+          "success": "#16A34A",
+          "warning": "#D97706"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#FFFFFF",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#64748B",
+        "roles": {
+          "border": "#E2E8F0",
+          "border_highlight": "#CBD5E1",
+          "badge_bg": "#F1F5F9"
+        }
+      },
+      {
+        "name": "panel_dark",
+        "kind": "solid",
+        "bg": "#0F172A",
+        "on_bg": "#F8FAFC",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "border": "#1E293B",
+          "link": "#818CF8",
+          "error": "#F87171",
+          "success": "#4ADE80",
+          "warning": "#FBBF24"
+        }
+      },
+      {
+        "name": "critical_low_stock_row",
+        "kind": "solid",
+        "bg": "#FEF2F2",
+        "on_bg": "#991B1B",
+        "on_bg_muted": "#B91C1C",
+        "roles": {
+          "badge_bg": "#FEE2E2",
+          "badge_text": "#991B1B",
+          "border": "#FECACA"
+        }
+      },
+      {
+        "name": "warning_low_stock_row",
+        "kind": "solid",
+        "bg": "#FFFBEB",
+        "on_bg": "#92400E",
+        "on_bg_muted": "#B45309",
+        "roles": {
+          "badge_bg": "#FEF3C7",
+          "badge_text": "#92400E",
+          "border": "#FDE68A"
+        }
+      },
+      {
+        "name": "pos_action_bar",
+        "kind": "solid",
+        "bg": "#4338CA",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#C7D2FE"
+      },
+      {
+        "name": "header_glass",
+        "kind": "glass",
+        "contrast_against": "#FFFFFF",
+        "guarantee": "backdrop-blur-md bg-white/85 border-b border-slate-200/80 dark:bg-slate-900/85 dark:border-slate-800",
+        "on_bg": "#0F172A",
+        "on_bg_muted": "#475569"
+      }
+    ],
+    "accent": "#6366F1",
+    "accent_hover": "#4F46E5",
+    "on_accent": "#FFFFFF",
+    "secondary_accent": "#EC4899",
+    "palette_semantic": {
+      "sale_action": "#10B981",
+      "out_of_stock": "#EF4444",
+      "low_stock_alert": "#F59E0B",
+      "fandom_tag_bg": "#EDE9FE",
+      "fandom_tag_text": "#5B21B6",
+      "type_tag_bg": "#FCE7F3",
+      "type_tag_text": "#9D174D"
+    }
+  },
+  "entry_surfaces": {
+    "/": "artist alley command centre — welcome greeting with active convention summary left, quick metric cards + live low-stock alerts panel right",
+    "/login": "split branded auth — artist illustration & convention badge banner left, clean admin login credentials card (default: admin / 1234) right",
+    "/productos": "dense table/grid inventory with fast tactile -1 Vender button, quick-filter chips (tipo, fandom, stock status), search and batch actions",
+    "/productos/nuevo": "structured product creator with image upload/preview, fandom tagger, price and initial stock controls",
+    "/productos/:id": "product detail sheet with stock adjustment history (+/- with sales vs inventory calibration rationale) and editable pricing",
+    "/ventas": "daily sales ledger with timeline feed, hourly breakdowns, top sellers ranking, and date picker navigation",
+    "/configuracion": "booth settings with live logo vs written name preview, currency selector, low stock alert threshold, customizable categories & fandom lists",
+    "/manual": "illustrated step-by-step Netlify + backend deployment and convention day workflow guide"
+  },
+  "routes_and_navigation": {
+    "header_nav": [
+      { "path": "/", "label": "Inicio", "icon": "LayoutDashboard", "testid": "nav-link-inicio" },
+      { "path": "/productos", "label": "Productos", "icon": "Package", "testid": "nav-link-productos" },
+      { "path": "/ventas", "label": "Registro de Ventas", "icon": "ReceiptText", "testid": "nav-link-ventas" },
+      { "path": "/configuracion", "label": "Configuración", "icon": "Settings", "testid": "nav-link-configuracion" },
+      { "path": "/manual", "label": "Manual de Uso & Despliegue", "icon": "BookOpen", "testid": "nav-link-manual" }
+    ],
+    "brand_header_rule": "Displays custom logo if uploaded/configured; fallback to text store name with alt text matching store name. Displays active currency pill and quick session logout."
+  },
+  "component_hierarchy": [
+    {
+      "path": "frontend/src/pages/Home.tsx",
+      "purpose": "Welcome dashboard, total active stock, today's gross sales & quantity, urgent low-stock / sold-out priority feed, quick action shortcuts"
+    },
+    {
+      "path": "frontend/src/pages/Login.tsx",
+      "purpose": "Auth screen with preset notice for admin/1234, tokenless httpOnly / session management"
+    },
+    {
+      "path": "frontend/src/pages/Products.tsx",
+      "purpose": "Core artist alley inventory catalog. Includes dual view (Tactical List vs Visual Grid), instant '-1 Venta Rápida' with sound/visual feedback, instant filters (Fandoms: One Piece, Dragon Ball, Naruto, Genshin, Original, etc.; Tipos: Chapa, Print A4, Print A5, Sticker, Acrílico, Llavero; Estado: Sin Stock, Pocas Unidades, En Stock)"
+    },
+    {
+      "path": "frontend/src/pages/ProductDetail.tsx",
+      "purpose": "Product profile and stock controller (+ adding stock with optional cost, - selling or retiring damaged items), photo URL/file picker, price editing"
+    },
+    {
+      "path": "frontend/src/pages/SalesLog.tsx",
+      "purpose": "Sales transactions of the day, total revenue, units sold per product, filter by calendar day, export CSV button"
+    },
+    {
+      "path": "frontend/src/pages/Settings.tsx",
+      "purpose": "Configure backend logo vs text store name, default currency (€ EUR, $ USD, etc.), low-stock alert threshold (e.g. 3 units), custom fandoms manager, custom product types manager, password change"
+    },
+    {
+      "path": "frontend/src/pages/Manual.tsx",
+      "purpose": "Step-by-step user and Netlify/cloud deployment guide with MongoDB configuration, convention best practices, and emergency offline backup tips"
+    }
+  ],
+  "visual_enhancers": {
+    "tactile_convention_mode": "Large high-contrast buttons for rapid tapping behind the booth tablet without misclicks.",
+    "low_stock_visuals": "Animated pulse warning icon + amber tint for items <= low_stock_threshold, red tint + strikethrough for 0 stock items.",
+    "quick_sale_toast": "Immediate sonner toast on '-1 Venta' with an undo button (Revertir venta) to prevent mistake clicks in hectic convention crowds."
+  },
+  "image_urls": {
+    "default_products": [
+      {
+        "category": "prints",
+        "description": "Anime art print illustration for gallery item",
+        "url": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxhbmltZSUyMG1lcmNoYW5kaXNlJTIwc3RpY2tlciUyMHBpbiUyMGFydHxlbnwwfHx8fDE3OTQ0ODE1OTl8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "stickers_acrylic",
+        "description": "Acrylic standee chibi character",
+        "url": "https://images.unsplash.com/photo-1741980992295-0c0b69ba3b43?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwzfHxhbmltZSUyMG1lcmNoYW5kaXNlJTIwc3RpY2tlciUyMHBpbiUyMGFydHxlbnwwfHx8fDE3OTQ0ODE1OTl8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "stickers",
+        "description": "Vinyl chibi sticker die-cut",
+        "url": "https://images.unsplash.com/photo-1741980983820-cbfcf8fba790?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHw0fHxhbmltZSUyMG1lcmNoYW5kaXNlJTIwc3RpY2tlciUyMHBpbiUyMGFydHxlbnwwfHx8fDE3OTQ0ODE1OTl8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "booth_atmosphere",
+        "description": "Artist alley booth in comic convention",
+        "url": "https://images.unsplash.com/photo-1793341153773-b7987e7f1e8a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwyfHxhcnRpc3QlMjBjb252ZW50aW9uJTIwYm9vdGh8ZW58MHx8fHwxNzk0NDgxNTk5fDA&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "motion": {
+    "library": "motion/react",
+    "quick_sale_feedback": "scale tap animation (scale: 0.95)",
+    "page_transitions": "smooth opacity and slight y-axis slide (15px) for page routes",
+    "reduced_motion": "always respect (prefers-reduced-motion: reduce)"
+  },
+  "accessibility": {
+    "contrast_standard": "WCAG AA (>= 4.5:1 text against backgrounds)",
+    "data_testid_convention": "kebab-case (e.g. data-testid=\"product-row-1-quick-sale\", data-testid=\"filter-fandom-select\", data-testid=\"stock-alert-card\")",
+    "touch_targets": "Minimum 44x44px for fast tablet tapping on convention stands"
+  },
+  "instructions_to_main_agent": [
+    "Language is Spanish ('es') throughout UI copy, buttons, error messages, and seed data.",
+    "Implement seed products with popular anime fandoms (Dragon Ball, One Piece, Naruto, Genshin Impact, Studio Ghibli, Spy x Family, Original) and merchandise types (Chapa / Pin metálico, Print A4, Print A5, Sticker vinilo, Stand acrílico, Llavero, Marcapáginas).",
+    "The default credentials must be admin / 1234 on login. Provide quick fill helper button for swift testing.",
+    "The product list must feature a very responsive quick '-1' (Vender 1) button with instant state update, toast notification with 'Deshacer', and automatic logging to the daily sales ledger.",
+    "Include high-visibility highlighting: products with 0 stock get a soft red border + badge 'Sin Stock'; products <= threshold get an amber badge 'Últimas X uds'.",
+    "In Settings: support editing Store Name vs Logo URL upload/preset, Currency choice (€, $, £, etc.), low stock alert threshold, customizable list of fandoms and product types (tags add/remove).",
+    "The Manual page must contain clear instructions on: 1) Using the app at convention stalls, 2) Daily sales reconciliation, 3) Backend + Netlify deployment guide with environment variables (MONGO_URL, DB_NAME, CORS_ORIGINS)."
+  ]
+}

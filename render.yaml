@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: alleystock-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements-deploy.txt
+    startCommand: uvicorn server:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME
+        value: alleystock
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: COOKIE_SECURE
+        value: "true"
